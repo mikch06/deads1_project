@@ -1,4 +1,5 @@
 import get_data
 
 
-get_data.tanke_strom_monthly()
+get_data.data_charginstation_data()
+get_data.data_charginstation_avail()
