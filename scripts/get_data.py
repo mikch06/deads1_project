@@ -26,6 +26,6 @@ def data_tanke_strom_monthly():
         file.write(r.content)
 
 
-#data_charginstation_data()
-#data_charginstation_avail()
+data_charginstation_data()
+data_charginstation_avail()
 data_tanke_strom_monthly()
