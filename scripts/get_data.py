@@ -1,4 +1,5 @@
 import requests
+import csv
 
 
 # Statische Informationen der Ladestationen (EVSEData) - kontinuierlich aktualisiert
@@ -21,10 +22,10 @@ def data_charginstation_avail():
 def data_tanke_strom_monthly():
     url = "https://www.uvek-gis.admin.ch/BFE/ogd/57/ich_tanke_strom_Kennzahlen_monatlich.csv"
     r = requests.get(url)
-    with open("../data/monthly.csv", "w") as file:
-        file.write(str(r.content))
+    with open("../data/landing/ich_tanke_strom_monthly.csv", "wb") as file:
+        file.write(r.content)
 
 
-data_charginstation_data()
-data_charginstation_avail()
+#data_charginstation_data()
+#data_charginstation_avail()
 data_tanke_strom_monthly()
