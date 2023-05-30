@@ -17,7 +17,7 @@ def data_charginstation_data():
 def data_charginstation_avail():
     url = "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/status/oicp/ch.bfe.ladestellen-elektromobilitaet.json"
     r = requests.get(url)
-    with open("../data/landing/status.ch.bfe.ladestellen-elektromobilitaet.json", 'wb') as file:
+    with open("../data/landing/status.ch.bfe.ladestellen-elektromobilitaet.json", "wb") as file:
         file.write(r.content)
 
 
@@ -28,6 +28,18 @@ def data_tanke_strom_monthly():
         file.write(r.content)
 
 
+def data_lverbrauch_everbrauch():
+    url = "https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd103_stromverbrauch_swissgrid_lv_und_endv.csv"
+    r = requests.get(url)
+    with open("../data/landing/landesverbrauch-endverbrauch.csv", "wb") as file:
+        file.write(r.content)
+
+
+
+
+
 data_charginstation_data()
 data_charginstation_avail()
 data_tanke_strom_monthly()
+data_lverbrauch_everbrauch()
+
