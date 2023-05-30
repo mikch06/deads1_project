@@ -1,6 +1,4 @@
 import requests
-import csv
-
 
 # Statische Informationen der Ladestationen (EVSEData) - kontinuierlich aktualisiert
 # https://opendata.swiss/dataset/ladestationen-fuer-elektroautos
@@ -8,8 +6,9 @@ import csv
 def data_charginstation_data():
     url = "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/data/oicp/ch.bfe.ladestellen-elektromobilitaet.json"
     r = requests.get(url)
-    with open("../data/landing/data.ch.bfe.ladestellen-elektromobilitaet.json", "w") as file:
-        file.write(str(r.content))
+    with open("../data/landing/data.ch.bfe.ladestellen-elektromobilitaet.json", "wb") as file:
+        file.write(r.content)
+
 
 # Verfügbarkeits-Informationen der Ladestationen (EVSEStatus) - kontinuierlich aktualisiert
 # https://opendata.swiss/dataset/ladestationen-fuer-elektroautos
@@ -17,8 +16,10 @@ def data_charginstation_data():
 def data_charginstation_avail():
     url = "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/status/oicp/ch.bfe.ladestellen-elektromobilitaet.json"
     r = requests.get(url)
-    with open("../data/landing/status.ch.bfe.ladestellen-elektromobilitaet.json", 'w') as file:
-        file.write(str(r.content))
+    with open("../data/landing/status.ch.bfe.ladestellen-elektromobilitaet.json", 'wb') as file:
+        file.write(r.content)
+
+
 def data_tanke_strom_monthly():
     url = "https://www.uvek-gis.admin.ch/BFE/ogd/57/ich_tanke_strom_Kennzahlen_monatlich.csv"
     r = requests.get(url)
