@@ -1,5 +1,6 @@
 import requests
 
+
 # Statische Informationen der Ladestationen (EVSEData) - kontinuierlich aktualisiert
 # https://opendata.swiss/dataset/ladestationen-fuer-elektroautos
 # https://opendata.swiss/dataset/ladestationen-fuer-elektroautos/resource/e33957be-180a-422b-90a5-fbfe9774927a
