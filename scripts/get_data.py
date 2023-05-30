@@ -36,6 +36,15 @@ def data_lverbrauch_everbrauch():
     with open("../data/landing/landesverbrauch-endverbrauch.csv", "wb") as file:
         file.write(r.content)
 
+# Stromverbrauch Prognose SDSC
+# https://opendata.swiss/de/dataset/energiedashboard-ch-stromverbrauch-prognose-sdsc/resource/db0b4b38-fc9f-47e6-805e-c467337621f9
+def data_stromverbrauch_prognose():
+    url = "https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd110_strom_verbrauch_prognose.csv"
+    r = requests.get(url)
+    with open("../data/landing/stromverbrauch_prognose.csv", "wb") as file:
+        file.write(r.content)
+
+
 # Stromproduktion
 # https://opendata.swiss/de/dataset/energiedashboard-ch-stromproduktion-swissgrid/resource/619e6fa0-7c2b-46dd-9633-7bd60fc5ec16
 def data_stromproduktion():
@@ -45,9 +54,9 @@ def data_stromproduktion():
         file.write(r.content)
 
 
-
 data_charginstation_data()
 data_charginstation_avail()
 data_tanke_strom_monthly()
 data_lverbrauch_everbrauch()
 data_stromproduktion()
+data_stromverbrauch_prognose()
