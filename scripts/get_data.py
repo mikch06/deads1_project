@@ -28,6 +28,8 @@ def data_tanke_strom_monthly():
         file.write(r.content)
 
 
+# Landesverbrauch und Endverbrauch
+# https://opendata.swiss/de/dataset/energiedashboard-ch-stromverbrauch-swissgrid/resource/3569b65f-1afc-4541-876f-cd98f9256cb1
 def data_lverbrauch_everbrauch():
     url = "https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd103_stromverbrauch_swissgrid_lv_und_endv.csv"
     r = requests.get(url)
