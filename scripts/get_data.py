@@ -34,7 +34,13 @@ def data_lverbrauch_everbrauch():
     with open("../data/landing/landesverbrauch-endverbrauch.csv", "wb") as file:
         file.write(r.content)
 
-
+# Stromproduktion
+# https://opendata.swiss/de/dataset/energiedashboard-ch-stromproduktion-swissgrid/resource/619e6fa0-7c2b-46dd-9633-7bd60fc5ec16
+def data_stromproduktion():
+    url = "https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd104_stromproduktion_swissgrid.csv"
+    r = requests.get(url)
+    with open("../data/landing/stromproduktion.csv", "wb") as file:
+        file.write(r.content)
 
 
 
@@ -42,4 +48,4 @@ data_charginstation_data()
 data_charginstation_avail()
 data_tanke_strom_monthly()
 data_lverbrauch_everbrauch()
-
+data_stromproduktion()
