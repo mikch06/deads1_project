@@ -21,6 +21,8 @@ def data_charginstation_avail():
         file.write(r.content)
 
 
+# Ich tanke Strom, Kennzahlen Neuwagen und Ladeinfrastruktur
+# https://www.uvek-gis.admin.ch/BFE/storymaps/MO_Kennzahlen_Fahrzeuge/Ladeinfrastruktur_Elektromobilitaet/
 def data_tanke_strom_monthly():
     url = "https://www.uvek-gis.admin.ch/BFE/ogd/57/ich_tanke_strom_Kennzahlen_monatlich.csv"
     r = requests.get(url)
