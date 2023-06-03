@@ -9,6 +9,6 @@ y = [6, 7, 2, 4, 5]
 p = figure(title="Simple line example", x_axis_label='x', y_axis_label='y')
 
 # add a line renderer with legend and line thickness to the plot
-p.line(x, y, legend_label="Temp.", line_width=2)
+p.line(x, y, line_width=2)
 
 show(p)

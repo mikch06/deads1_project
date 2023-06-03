@@ -19,6 +19,4 @@ print(df1)
 
 df1.to_csv("../data/bronze/b_ich_tanke_strom_monthly.csv", index=False)
 
-x, y = df['year'], df['month']
 
-print(y)
