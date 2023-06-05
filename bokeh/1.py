@@ -12,14 +12,16 @@ p = figure(title="Simple line example", x_axis_label='x', y_axis_label='y')
 # add a line renderer with legend and line thickness to the plot
 p.line(x, y, line_width=2)
 
-show(p)
+#show(p)
 
 
-df = pd.read_csv("../data/landing/ich_tanke_strom_monthly.csv")
+df = pd.read_csv("../data/bronze/b_ich_tanke_strom_monthly.csv")
 #df = df.filter(regex="(year|month|locations_|stations_)")
-group = df.groupby(('locations_AG_count', 'locations_AI_count'))
-source = ColumnDataSource(group)
+source = ColumnDataSource(df=df)
 p = figure(title="Stromtanken samples", x_axis_label='x', y_axis_label='y')
 p.line(y="year", source=source)
 show(p)
 
+for i in source:
+    p.line(x, y)
+    show(p)
