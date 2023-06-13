@@ -38,6 +38,6 @@ plt.rcParams["figure.figsize"] = [7.50, 3.50]
 plt.rcParams["figure.autolayout"] = True
 
 df = pd.read_csv("../data/bronze/b_ich_tanke_strom_monthly.csv")
-df.plot()
+df.plot(title="Simple line example")
 
 plt.show()
