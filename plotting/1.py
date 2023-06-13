@@ -30,16 +30,17 @@ y = [6, 7, 2, 4, 5]
 ## Bokeh
 # Bokeh Versuch
 df = pd.read_csv("../data/bronze/b_ich_tanke_strom_monthly.csv")
-p = figure(title="Bokeh multiline example", x_axis_label='Zeit', y_axis_label='Anzahl')
+#p = figure(title="Bokeh multiline example", x_axis_label='Zeit', y_axis_label='Anzahl')
 #source = ColumnDataSource(df)
 print(df.head())
 x = df['year']
 y = df['month']
 
-p.line(x, y, line_width=5)
+#p.line(x, y, line_width=5)
 
 #output_file("html/foo.html")
-#source = ColumnDataSource(df)
+source = ColumnDataSource(df)
+p = figure(x_axis_label='Zeit', y_axis_label='Anzahl', source=source)
 show(p)
 
 
