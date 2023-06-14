@@ -40,8 +40,8 @@ y = df['month']
 
 #output_file("html/foo.html")
 source = ColumnDataSource(df)
-p = figure(x_axis_label='Zeit', y_axis_label='Anzahl', source=source)
+#p = figure(x_axis_label='Zeit', y_axis_label='Anzahl', source=source)
+p = figure()
+p.line(x='year', y='month', source=source)
 show(p)
-
-
 
