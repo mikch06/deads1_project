@@ -1,4 +1,4 @@
-from bokeh.plotting import figure, show, ColumnDataSource, output_file
+from v_bokeh.plotting import figure, show, ColumnDataSource, output_file
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -42,6 +42,6 @@ y = df['month']
 source = ColumnDataSource(df)
 #p = figure(x_axis_label='Zeit', y_axis_label='Anzahl', source=source)
 p = figure()
-p.line(x='year', y='month', source=source)
+p.line(x='stations_TG_count', y='stations_ZH_count', source=source)
 show(p)
 
