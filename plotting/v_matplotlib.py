@@ -17,7 +17,7 @@ df = pd.read_csv("../data/bronze/b_ich_tanke_strom_monthly.csv")
 ##
 # Funktionierender multiline plot
 
-plt.rcParams["figure.figsize"] = [7.50, 3.50]
+plt.rcParams["figure.figsize"] = [15, 15]
 plt.rcParams["figure.autolayout"] = True
 df = pd.read_csv("../data/bronze/b_ich_tanke_strom_monthly.csv")
 df.plot(title="Simple line example")
