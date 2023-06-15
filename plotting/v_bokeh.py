@@ -25,10 +25,7 @@ source = ColumnDataSource(df)
 p = figure(title="Ladestationen in den Kantonen", x_axis_label='Zeit', y_axis_label='Anzahl', x_axis_type='datetime')
 p.line(x='date', y='stations_ZH_count', source=source)
 p.line(x='date', y='stations_ZG_count', source=source)
-for i in df:
-    p.line(x='date', y=i, source=source)
-    print(i)
-    show(p)
+
 
 show(p)
 
