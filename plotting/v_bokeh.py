@@ -3,13 +3,8 @@ from bokeh.models import HoverTool
 from bokeh.palettes import Category10
 import pandas as pd
 
-## Bokeh
-# Bokeh Versuch
 df = pd.read_csv("../data/bronze/b_ich_tanke_strom_monthly.csv")
-#p = figure(title="Bokeh multiline example", x_axis_label='Zeit', y_axis_label='Anzahl')
-#source = ColumnDataSource(df)
 print(df.head())
-
 
 # Datetime of two columns
 # https://sparkbyexamples.com/pandas/pandas-convert-multiple-columns-to-datetime-type/
@@ -18,30 +13,14 @@ df = df.filter(regex="(date|stations_)")
 
 columns = df.filter(regex="(stations_)")
 
-
-print(df.head())
-
-
-#p.line(x, y, line_width=5)
-
-#output_file("html/foo.html")
+output_file("html/v_charging_stations.html")
 source = ColumnDataSource(df)
 #p = figure(x_axis_label='Zeit', y_axis_label='Anzahl', source=source)
-p = figure(title="Ladestationen in den Kantonen", x_axis_label='Zeit', y_axis_label='Anzahl', x_axis_type='datetime')
-p.line(x='date', y='stations_LU_count', source=source, line_width=2)
-p.line(x='date', y='stations_ZG_count', source=source)
+p = figure(title="Ladestationen in den Kantonen", x_axis_label='Zeit', y_axis_label='Anzahl', x_axis_type='datetime',
+frame_width=800, frame_height=300)
+
+for i in columns:
+    p.line(x='date', y=i, source=source, line_width=1)
+    # p.line(x='date', y='stations_ZG_count', source=source)
+    print("Stations for line graph: ", i)
 show(p)
-
-
-
-
-# for i in range(len(grp_list)):
-#     source = ColumnDataSource(
-#         data={'x':df.loc[df.group == grp_list[i]].x,
-#               'group':df.loc[df.group == grp_list[i]].group,
-#               'y':df.loc[df.group == grp_list[i]].y})
-#     p2.line(x='x',
-#             y='y',
-#             source=source,
-#             legend_label = grp_list[i],
-#             color = (Category10[3])[i])
