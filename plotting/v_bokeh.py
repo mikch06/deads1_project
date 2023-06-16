@@ -1,4 +1,6 @@
 from bokeh.plotting import figure, show, ColumnDataSource, output_file
+from bokeh.models import HoverTool
+from bokeh.palettes import Category10
 import pandas as pd
 
 ## Bokeh
@@ -13,6 +15,9 @@ print(df.head())
 # https://sparkbyexamples.com/pandas/pandas-convert-multiple-columns-to-datetime-type/
 df['date'] = pd.to_datetime(df[['year', 'month']].assign(day=1))
 df = df.filter(regex="(date|stations_)")
+
+columns = df.filter(regex="(stations_)")
+
 
 print(df.head())
 
