@@ -17,11 +17,12 @@ stations = df.filter(regex="(stations_)")
 output_file("../var/www/deads/html/plots/v_charging_stations.html")
 source = ColumnDataSource(df)
 p = figure(title="Ladestationen in allen Kantonen", x_axis_label='Zeit', y_axis_label='Anzahl', x_axis_type='datetime',
-frame_width=1200, frame_height=300)
-p.legend.title = "Legend"
+frame_width=1200, frame_height=500)
 
 for i in stations:
     p.line(x='date', y=i, source=source, line_width=2, legend_label=i)
-    print("Stations for line graph: ", i)
+    p.legend.title = 'Kantone'
+    p.legend.location = "bottom_left"
+    # print("Stations for line graph: ", i)
 show(p)
 
