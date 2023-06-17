@@ -11,16 +11,17 @@ print(df.head())
 df['date'] = pd.to_datetime(df[['year', 'month']].assign(day=1))
 df = df.filter(regex="(date|stations_)")
 
-columns = df.filter(regex="(stations_)")
+stations = df.filter(regex="(stations_)")
+# locations = df.filter(regex="(locations:)")
 
-output_file("html/v_charging_stations.html")
+output_file("../var/www/deads/html/plots/v_charging_stations.html")
 source = ColumnDataSource(df)
-#p = figure(x_axis_label='Zeit', y_axis_label='Anzahl', source=source)
-p = figure(title="Ladestationen in den Kantonen", x_axis_label='Zeit', y_axis_label='Anzahl', x_axis_type='datetime',
-frame_width=800, frame_height=300)
+p = figure(title="Ladestationen in allen Kantonen", x_axis_label='Zeit', y_axis_label='Anzahl', x_axis_type='datetime',
+frame_width=1200, frame_height=300)
+p.legend.title = "Legend"
 
-for i in columns:
-    p.line(x='date', y=i, source=source, line_width=1)
-    # p.line(x='date', y='stations_ZG_count', source=source)
+for i in stations:
+    p.line(x='date', y=i, source=source, line_width=2, legend_label=i)
     print("Stations for line graph: ", i)
 show(p)
+
