@@ -28,6 +28,6 @@ for i in stations:
 show(p)
 
 hover = HoverTool(tooltips =[
-     ('group','@group'),('x','@date'),('y','@i')])
+     ('Zeit','@date'),('Anzahl','@i')])
 p.add_tools(hover)
 show(p)
