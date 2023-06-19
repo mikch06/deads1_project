@@ -18,7 +18,7 @@ stations = df.filter(regex="(stations_)")
 output_file("../var/www/deads/html/plots/v_charging_stations.html")
 source = ColumnDataSource(df)
 p = figure(title="Ladestationen in allen Kantonen", x_axis_label='Zeit', y_axis_label='Anzahl', x_axis_type='datetime',
-frame_width=1200, frame_height=500)
+frame_width=1200, frame_height=800)
 
 for i in stations:
     p.line(x='date', y=i, source=source, line_width=2, legend_label=i, color='green')
@@ -28,6 +28,6 @@ for i in stations:
 show(p)
 
 hover = HoverTool(tooltips =[
-     ('group','@group'),('x','@x'),('y','@y')])
+     ('group','@group'),('x','@date'),('y','@i')])
 p.add_tools(hover)
 show(p)
