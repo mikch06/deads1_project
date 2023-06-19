@@ -3,6 +3,7 @@ from bokeh.models import HoverTool
 from bokeh.palettes import Category10
 import pandas as pd
 
+
 df = pd.read_csv("../data/bronze/b_ich_tanke_strom_monthly.csv")
 print(df.head())
 
@@ -20,9 +21,13 @@ p = figure(title="Ladestationen in allen Kantonen", x_axis_label='Zeit', y_axis_
 frame_width=1200, frame_height=500)
 
 for i in stations:
-    p.line(x='date', y=i, source=source, line_width=2, legend_label=i)
+    p.line(x='date', y=i, source=source, line_width=2, legend_label=i, color='green')
     p.legend.title = 'Kantone'
     p.legend.location = "bottom_left"
     # print("Stations for line graph: ", i)
 show(p)
 
+hover = HoverTool(tooltips =[
+     ('group','@group'),('x','@x'),('y','@y')])
+p.add_tools(hover)
+show(p)
