@@ -56,7 +56,7 @@ def data_stromproduktion():
         file.write(r.content)
 
 def backupdata():
-    print(foo)
+    print()
 
 
 
