@@ -1,5 +1,11 @@
+import os
+
 import requests
 
+#os.chdir("../data/foo")
+# change directory
+#
+# https://stackoverflow.com/questions/8024248/telling-python-to-save-a-txt-file-to-a-certain-directory-on-windows-and-mac
 
 # Statische Informationen der Ladestationen (EVSEData) - kontinuierlich aktualisiert
 # https://opendata.swiss/dataset/ladestationen-fuer-elektroautos
@@ -7,9 +13,10 @@ import requests
 def data_charginstation_data():
     url = "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/data/oicp/ch.bfe.ladestellen-elektromobilitaet.json"
     r = requests.get(url)
-    with open("../data/landing/data.ch.bfe.ladestellen-elektromobilitaet.json", "wb") as file:
+    with open("data.ch.bfe.ladestellen-elektromobilitaet.json", "wb") as file:
         file.write(r.content)
 
+data_charginstation_data()
 
 # Verfügbarkeits-Informationen der Ladestationen (EVSEStatus) - kontinuierlich aktualisiert
 # https://opendata.swiss/dataset/ladestationen-fuer-elektroautos
