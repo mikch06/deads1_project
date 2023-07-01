@@ -1,5 +1,8 @@
 import requests
 
+# https://stackoverflow.com/questions/8024248/telling-python-to-save-a-txt-file-to-a-certain-directory-on-windows-and-mac
+# os.chdir - check
+
 
 # Statische Informationen der Ladestationen (EVSEData) - kontinuierlich aktualisiert
 # https://opendata.swiss/dataset/ladestationen-fuer-elektroautos
