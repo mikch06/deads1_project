@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 # show(f)
 
 # Simple line example (2) pandas
-df = pd.read_csv("../data/bronze/b_ich_tanke_strom_monthly.csv")
+df = pd.read_csv("../data/bronze/bak/b_ich_tanke_strom_monthly.csv")
 #lines = df.plot.line(title="Simple line example2")
 
 ##
@@ -19,7 +19,7 @@ df = pd.read_csv("../data/bronze/b_ich_tanke_strom_monthly.csv")
 
 plt.rcParams["figure.figsize"] = [15, 15]
 plt.rcParams["figure.autolayout"] = True
-df = pd.read_csv("../data/bronze/b_ich_tanke_strom_monthly.csv")
+df = pd.read_csv("../data/bronze/bak/b_ich_tanke_strom_monthly.csv")
 df.plot(title="Simple line example")
 plt.show()
 
