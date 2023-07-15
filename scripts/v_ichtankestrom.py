@@ -4,7 +4,6 @@ from bokeh.palettes import Category10
 import pandas as pd
 
 def visualize_ichtankestrom():
-
     df = pd.read_csv("../data/silver/b_ich_tanke_strom_monthly.csv")
     print(df.head())
 
@@ -22,11 +21,9 @@ def visualize_ichtankestrom():
     frame_width=1200, frame_height=800)
 
     for i in stations:
-        p.line(x='date', y=i, source=source, line_width=2, legend_label=i, color='green')
+        p.line(x='date', y=i, source=source, line_width=2, legend_label=i, color='red')
         p.legend.title = 'Kantone'
         p.legend.location = "bottom_left"
-        # print("Stations for line graph: ", i)
-    show(p)
 
     hover = HoverTool(tooltips =[
          ('Zeit','@date'),('Anzahl','@i')])
