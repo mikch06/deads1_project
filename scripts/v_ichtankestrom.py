@@ -26,6 +26,9 @@ def visualize_ichtankestrom():
         p.legend.location = "bottom_left"
 
     hover = HoverTool(tooltips =[
-         ('Zeit','@date'),('Anzahl','@i')])
+         ('Zeit','@date'),('Anzahl', '@i')])
     p.add_tools(hover)
     show(p)
+
+
+visualize_ichtankestrom()
