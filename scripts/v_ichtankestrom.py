@@ -4,7 +4,7 @@ from bokeh.palettes import Category10
 import pandas as pd
 
 
-df = pd.read_csv("../data/bronze/b_ich_tanke_strom_monthly.csv")
+df = pd.read_csv("../data/silver/b_ich_tanke_strom_monthly.csv")
 print(df.head())
 
 # Datetime of two columns
