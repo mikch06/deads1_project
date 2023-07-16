@@ -29,7 +29,7 @@ def data_charginstation_avail():
 def data_tanke_strom_monthly():
     url = "https://www.uvek-gis.admin.ch/BFE/ogd/57/ich_tanke_strom_Kennzahlen_monatlich.csv"
     r = requests.get(url)
-    with open("../data/bronze/ich_tanke_strom_monthly.csv", "wb") as file:
+    with open("../data/bronze/b_ich_tanke_strom_monthly.csv", "wb") as file:
         file.write(r.content)
 
 

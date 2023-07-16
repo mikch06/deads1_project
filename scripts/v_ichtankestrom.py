@@ -4,7 +4,7 @@ from bokeh.palettes import Category10
 import pandas as pd
 
 def visualize_ichtankestrom():
-    df = pd.read_csv("../data/silver/b_ich_tanke_strom_monthly.csv")
+    df = pd.read_csv("../data/gold/g_ich_tanke_strom_monthly.csv")
     print(df.head())
 
     # Datetime of two columns
@@ -29,6 +29,3 @@ def visualize_ichtankestrom():
          ('Zeit','@date'),('Anzahl', '@i')])
     p.add_tools(hover)
     show(p)
-
-
-visualize_ichtankestrom()
