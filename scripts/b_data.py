@@ -10,7 +10,7 @@ import requests
 def data_charginstation_data():
     url = "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/data/oicp/ch.bfe.ladestellen-elektromobilitaet.json"
     r = requests.get(url)
-    with open("../data/bronze/data.ch.bfe.ladestellen-elektromobilitaet.json", "wb") as file:
+    with open("../data/bronze/b_data.ch.bfe.ladestellen-elektromobilitaet.json", "wb") as file:
         file.write(r.content)
 
 
@@ -20,7 +20,7 @@ def data_charginstation_data():
 def data_charginstation_avail():
     url = "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/status/oicp/ch.bfe.ladestellen-elektromobilitaet.json"
     r = requests.get(url)
-    with open("../data/bronze/status.ch.bfe.ladestellen-elektromobilitaet.json", "wb") as file:
+    with open("../data/bronze/b_status.ch.bfe.ladestellen-elektromobilitaet_avail.json", "wb") as file:
         file.write(r.content)
 
 
@@ -38,7 +38,7 @@ def data_tanke_strom_monthly():
 def data_lverbrauch_everbrauch():
     url = "https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd103_stromverbrauch_swissgrid_lv_und_endv.csv"
     r = requests.get(url)
-    with open("../data/bronze/landesverbrauch-endverbrauch.csv", "wb") as file:
+    with open("../data/bronze/b_landesverbrauch-endverbrauch.csv", "wb") as file:
         file.write(r.content)
 
 # Stromverbrauch Prognose SDSC
@@ -46,7 +46,7 @@ def data_lverbrauch_everbrauch():
 def data_stromverbrauch_prognose():
     url = "https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd110_strom_verbrauch_prognose.csv"
     r = requests.get(url)
-    with open("../data/bronze/stromverbrauch_prognose.csv", "wb") as file:
+    with open("../data/bronze/b_stromverbrauch_prognose.csv", "wb") as file:
         file.write(r.content)
 
 
@@ -55,5 +55,5 @@ def data_stromverbrauch_prognose():
 def data_stromproduktion():
     url = "https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd104_stromproduktion_swissgrid.csv"
     r = requests.get(url)
-    with open("../data/bronze/stromproduktion.csv", "wb") as file:
+    with open("../data/bronze/b_stromproduktion.csv", "wb") as file:
         file.write(r.content)
