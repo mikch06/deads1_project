@@ -3,13 +3,11 @@ import random
 from bokeh.plotting import figure, show, ColumnDataSource, output_file
 from bokeh.models import HoverTool
 from bokeh.palettes import Viridis256
-import collections
 import pandas as pd
 
 
-
-
 def visualize_ichtankestrom():
+    global i
     df = pd.read_csv("../data/gold/g_ich_tanke_strom_monthly.csv")
     print(df.head())
 
@@ -21,12 +19,11 @@ def visualize_ichtankestrom():
     stations = df.filter(regex="(stations_)")
     # locations = df.filter(regex="(locations:)")
 
-
-
     output_file("/var/www/deads/html/plots/v_charging_stations.html")
     source = ColumnDataSource(df)
-    p = figure(title="Ladestationen in allen Kantonen", x_axis_label='Zeit', y_axis_label='Anzahl', x_axis_type='datetime',
-    frame_width=1200, frame_height=800)
+    p = figure(title="Ladestationen in allen Kantonen", x_axis_label='Zeit', y_axis_label='Anzahl',
+               x_axis_type='datetime',
+               frame_width=1200, frame_height=800)
 
     for i in stations:
         # graph color random from bokeh palettes
@@ -38,7 +35,7 @@ def visualize_ichtankestrom():
         print(colors)
 
     # Hover Tooltips in graph
-    hover = HoverTool(tooltips =[
-         ('Datum','$x'),('Anzahl', '$y{(0)}')])
+    hover = HoverTool(tooltips=[
+        ('Datum', '$x'), ('Anzahl', '$y{(0)}'), ('Kanton', i)])
     p.add_tools(hover)
     show(p)
