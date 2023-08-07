@@ -25,7 +25,8 @@ def visualize_ichtankestrom():
         p.legend.title = 'Kantone'
         p.legend.location = "bottom_left"
 
+    # Hover Tooltips in graph
     hover = HoverTool(tooltips =[
-         ('Zeit','@date'),('Anzahl', '@i')])
+         ('Datum','$x'),('Anzahl', '$y{(0)}')])
     p.add_tools(hover)
     show(p)
