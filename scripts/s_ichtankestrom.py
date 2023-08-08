@@ -4,7 +4,7 @@ import pandas as pd
 # locations_XY_count : Anzahl Standorte pro Kanton.
 
 def silver_ichtankestrom():
-    df = pd.read_csv("../data/bronze/b_ich_tanke_strom_monthly.csv")
+    df = pd.read_csv("../data/_bronze/b_ich_tanke_strom_monthly.csv")
 
     df1 = df.filter(regex="(year|month|locations_|stations_)")
     # pd.set_option("display.max_rows", None)
