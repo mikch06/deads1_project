@@ -14,8 +14,8 @@ def gold_ichtankestrom():
 
     # Sum CH locations
     df2 = df[["month", "year", "locations_CH_count"]]
-    df2.to_csv("../data/gold/g_ich_tanke_strom_monthly_locations_CH.csv")
+    df2.to_csv("../data/gold/g_ich_tanke_strom_monthly_locations_CH.csv", index=False)
 
     # Sum CH stations
     df3 = df[["month", "year", "stations_CH_count"]]
-    df3.to_csv("../data/gold/g_ich_tanke_strom_monthly_stations_CH.csv")
+    df3.to_csv("../data/gold/g_ich_tanke_strom_monthly_stations_CH.csv", index=False)
