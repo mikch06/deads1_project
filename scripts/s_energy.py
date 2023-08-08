@@ -3,7 +3,7 @@ import pandas as pd
 
 
 def silver_energy():
-    df = pd.read_csv("../data/bronze/b_stromproduktion.csv")
+    df = pd.read_csv("../data/_bronze/b_stromproduktion.csv")
 
     #df1 = df
     # pd.set_option("display.max_rows", None)
@@ -13,7 +13,7 @@ def silver_energy():
     print("sample")
     print(df.sample(10))
 
-    df1 = pd.read_csv("../data/bronze/b_landesverbrauch-endverbrauch.csv")
+    df1 = pd.read_csv("../data/_bronze/b_landesverbrauch-endverbrauch.csv")
     # df2 = df.filter(regex="(year|month|stations_)")
     # pd.set_option("display.max_rows", None)
     # pd.set_option('display.max_columns', None)
