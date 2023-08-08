@@ -34,10 +34,28 @@ def visualize_ichtankestrom():
         p.legend.location = "bottom_left"
         p.toolbar.autohide = True
 
-    # Hover Tooltips in graph
+        # Hover Tooltips in graph
         hover = HoverTool(tooltips=[
             # ('Datum', '$x'),
             ('Anzahl', '$y{(0)}')])
-            # ('Kanton', i)])
+        # ('Kanton', i)])
     p.add_tools(hover)
     show(p)
+
+
+def visualize_ichtankestrom_CH():
+    df = pd.read_csv("../data/gold/g_ich_tanke_strom_monthly_locations_CH.csv")
+    html = df.to_html(border=1)
+    print("HTML Output:", html)
+
+    output_html = open("/var/www/deads/html/plots/v_charging_locations_CH.html", "w")
+    output_html.write(html)
+    output_html.close()
+
+    df1 = pd.read_csv("../data/gold/g_ich_tanke_strom_monthly_stations_CH.csv")
+    html1 = df1.to_html(border=1)
+    print("HTML Output:", html1)
+
+    output_html1 = open("/var/www/deads/html/plots/v_charging_stations_CH.html", "w")
+    output_html1.write(html1)
+    output_html1.close()
