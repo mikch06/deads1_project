@@ -32,7 +32,6 @@ def visualize_ichtankestrom():
         p.line(x='date', y=i, source=source, line_width=2, legend_label=i, color=colors)
         p.legend.title = 'Kantone'
         p.legend.location = "bottom_left"
-        print(i)
 
     # Hover Tooltips in graph
     hover = HoverTool(tooltips=[
