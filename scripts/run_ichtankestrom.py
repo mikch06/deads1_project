@@ -10,3 +10,6 @@ print("make data gold")
 
 v_ichtankestrom.visualize_ichtankestrom()
 print("plotting data")
+
+v_ichtankestrom.visualize_ichtankestrom_CH()
+print("Write HTML stations/locations content")
