@@ -19,20 +19,19 @@ def visualize_ichtankestrom():
     stations = df.filter(regex="(stations_)")
     # locations = df.filter(regex="(locations:)")
 
-    output_file("/var/www/deads/html/plots/v_charging_stations.html")
+    output_file("/var/www/deads/html/plots/v_charging_stations.html", title="Ladestationen in allen Kantonen")
     source = ColumnDataSource(df)
     p = figure(title="Ladestationen in allen Kantonen", x_axis_label='Zeit', y_axis_label='Anzahl',
                x_axis_type='datetime',
                frame_width=1200, frame_height=800)
 
     for i in stations:
-        # graph color random from bokeh palettes
+        # Graph color random from bokeh palettes
         colors = random.choice(Viridis256)
 
         p.line(x='date', y=i, source=source, line_width=2, legend_label=i, color=colors)
         p.legend.title = 'Kantone'
         p.legend.location = "bottom_left"
-        print(colors)
 
     # Hover Tooltips in graph
     hover = HoverTool(tooltips=[
