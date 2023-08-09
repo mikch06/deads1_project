@@ -36,7 +36,7 @@ def data_tanke_strom_monthly():
 # Landesverbrauch und Endverbrauch
 # https://opendata.swiss/de/dataset/energiedashboard-ch-stromverbrauch-swissgrid/resource/3569b65f-1afc-4541-876f-cd98f9256cb1
 def data_lverbrauch_everbrauch():
-    url = "https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd103_stromverbrauch_swissgrid_lv_und_endv.csv"
+    url = "https://www.uvek-gis.admin.ch/BFE/ogd/103/ogd103_stromverbrauch_swissgrid_lv_und_endv.csv"
     r = requests.get(url)
     with open("../data/bronze/b_landesverbrauch-endverbrauch.csv", "wb") as file:
         file.write(r.content)
@@ -53,7 +53,7 @@ def data_stromverbrauch_prognose():
 # Stromproduktion
 # https://opendata.swiss/de/dataset/energiedashboard-ch-stromproduktion-swissgrid/resource/619e6fa0-7c2b-46dd-9633-7bd60fc5ec16
 def data_stromproduktion():
-    url = "https://bfe-energy-dashboard-ogd.s3.amazonaws.com/ogd104_stromproduktion_swissgrid.csv"
+    url = "https://www.uvek-gis.admin.ch/BFE/ogd/104/ogd104_stromproduktion_swissgrid.csv"
     r = requests.get(url)
     with open("../data/bronze/b_stromproduktion.csv", "wb") as file:
         file.write(r.content)
