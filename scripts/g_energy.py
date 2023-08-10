@@ -8,3 +8,8 @@ def gold_energy():
 
 
     df.to_csv("../data/gold/g_stromproduktion.csv", index=False)
+
+
+    df1 = pd.read_csv("../data/silver/s_landesverbrauch-estimated.csv")
+
+    df1.to_csv("../data/gold/g_landesverbrauch-estimated.csv", index=False)
