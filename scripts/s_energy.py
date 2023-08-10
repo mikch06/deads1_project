@@ -17,20 +17,10 @@ def silver_energy():
 
 
     df1 = pd.read_csv("../data/bronze/b_landesverbrauch-endverbrauch.csv")
-    # df2 = df.filter(regex="(year|month|stations_)")
-    # pd.set_option("display.max_rows", None)
-    # pd.set_option('display.max_columns', None)
-    # pd.set_option('display.width', 100)
-    # #print(df2)
+    print(df1)
+    df1.to_csv("../data/silver/s_landesverbrauch-endverbrauch.csv")
 
-    # frames = [df, df1]
-    #
-    # result = pd.concat(frames)
-    #
-    # print(result)
-    #
-    # #df1.to_csv("../data/silver/s_stromproduktion.csv", index=False)
-    #
-    # result.to_csv("../data/silver/s_strom.csv", index=False)
 
-silver_energy()
+    df2 = pd.read_csv("../data/bronze/b_landesverbrauch-estimated.csv")
+    print(df2)
+    df2.to_csv("../data/silver/s_landesverbrauch-estimated.csv")

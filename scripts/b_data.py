@@ -35,10 +35,19 @@ def data_tanke_strom_monthly():
 
 # Landesverbrauch und Endverbrauch
 # https://opendata.swiss/de/dataset/energiedashboard-ch-stromverbrauch-swissgrid/resource/3569b65f-1afc-4541-876f-cd98f9256cb1
-def data_lverbrauch_everbrauch():
+def data_lverbrauch_verbrauch():
     url = "https://www.uvek-gis.admin.ch/BFE/ogd/103/ogd103_stromverbrauch_swissgrid_lv_und_endv.csv"
     r = requests.get(url)
     with open("../data/bronze/b_landesverbrauch-endverbrauch.csv", "wb") as file:
+        file.write(r.content)
+
+# Landesverbrauch geschätzt
+# https://opendata.swiss/de/dataset/energiedashboard-ch-stromverbrauch-swissgrid
+# https://opendata.swiss/de/dataset/energiedashboard-ch-stromverbrauch-swissgrid/resource/271a6814-75ad-400b-824e-27043a60b294
+def data_lverbrauch_verbrauch_geschaetzt():
+    url = "https://www.uvek-gis.admin.ch/BFE/ogd/103/ogd103_stromverbrauch_geschaetzt_swissgrid.csv"
+    r = requests.get(url)
+    with open("../data/bronze/b_landesverbrauch-estimated.csv", "wb") as file:
         file.write(r.content)
 
 # Stromverbrauch Prognose SDSC
