@@ -13,7 +13,7 @@ def visualize_energy():
     # output_html = open("/var/www/deads/html/plots/v_stromproduktion.html", "w")
     # output_html.write(html)
     # output_html.close()
-    df.to_html('foo.html', index=False, border=0, justify='left', classes='')
+    df.to_html('/var/www/deads/html/plots/v_stromproduktion.html', index=False, border=0, justify='left', classes='')
 
 
 
