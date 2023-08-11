@@ -45,7 +45,7 @@ def visualize_ichtankestrom():
 
 def visualize_ichtankestrom_CH():
     df = pd.read_csv("../data/gold/g_ich_tanke_strom_monthly_locations_CH.csv")
-    html = df.to_html(border=1)
+    html = df.to_html(border=0)
     print("HTML Output:", html)
 
     output_html = open("/var/www/deads/html/plots/v_charging_locations_CH.html", "w")
@@ -53,7 +53,7 @@ def visualize_ichtankestrom_CH():
     output_html.close()
 
     df1 = pd.read_csv("../data/gold/g_ich_tanke_strom_monthly_stations_CH.csv")
-    html1 = df1.to_html(border=1)
+    html1 = df1.to_html(border=0)
     print("HTML Output:", html1)
 
     output_html1 = open("/var/www/deads/html/plots/v_charging_stations_CH.html", "w")
