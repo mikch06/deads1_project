@@ -10,6 +10,8 @@ def gold_ichtankestrom():
     # Cut out locations and station all over CH
     del df1["locations_CH_count"]
     del df1["stations_CH_count"]
+    df1.columns = df1.columns.str.strip("_count")
+    #df1 = df1.replace(regex=r"stations_", value="Kanton_")
     df1.to_csv("../data/gold/g_ich_tanke_strom_monthly.csv", index=False)
 
     # Sum CH locations
