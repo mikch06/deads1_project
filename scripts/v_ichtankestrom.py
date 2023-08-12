@@ -1,11 +1,8 @@
 import random
-
 from bokeh.plotting import figure, show, ColumnDataSource, output_file
 from bokeh.models import HoverTool
 from bokeh.palettes import Viridis256
 import pandas as pd
-
-
 def visualize_ichtankestrom():
     global i
     df = pd.read_csv("../data/gold/g_ich_tanke_strom_monthly.csv")
@@ -41,7 +38,6 @@ def visualize_ichtankestrom():
         # ('Kanton', i)])
     p.add_tools(hover)
     show(p)
-
 
 def visualize_ichtankestrom_CH():
     df = pd.read_csv("../data/gold/g_ich_tanke_strom_monthly_locations_CH.csv")
