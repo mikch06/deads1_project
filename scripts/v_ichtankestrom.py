@@ -40,18 +40,10 @@ def visualize_ichtankestrom():
     show(p)
 
 def visualize_ichtankestrom_CH():
+    # Ldestationen Locations
     df = pd.read_csv("../data/gold/g_ich_tanke_strom_monthly_locations_CH.csv")
-    html = df.to_html(border=0)
-    print("HTML Output:", html)
+    df.to_html("/var/www/deads/html/plots/v_charging_locations_CH.html", index=False, border=0, justify='left', classes='')
 
-    output_html = open("/var/www/deads/html/plots/v_charging_locations_CH.html", "w")
-    output_html.write(html)
-    output_html.close()
-
+    # Ladestationen Stations
     df1 = pd.read_csv("../data/gold/g_ich_tanke_strom_monthly_stations_CH.csv")
-    html1 = df1.to_html(border=0)
-    print("HTML Output:", html1)
-
-    output_html1 = open("/var/www/deads/html/plots/v_charging_stations_CH.html", "w")
-    output_html1.write(html1)
-    output_html1.close()
+    df.to_html("/var/www/deads/html/plots/v_charging_stations_CH.html", index=False, border=0, justify='left', classes='')
