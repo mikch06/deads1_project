@@ -46,4 +46,8 @@ def visualize_ichtankestrom_CH():
 
     # Ladestationen Stations
     df1 = pd.read_csv("../data/gold/g_ich_tanke_strom_monthly_stations_CH.csv")
-    df.to_html("/var/www/deads/html/plots/v_charging_stations_CH.html", index=False, border=0, justify='left', classes='')
+    df1.to_html("/var/www/deads/html/plots/v_charging_stations_CH.html", index=False, border=0, justify='left', classes='')
+
+
+
+
