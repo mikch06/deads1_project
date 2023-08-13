@@ -42,10 +42,14 @@ def visualize_ichtankestrom():
 def visualize_ichtankestrom_CH():
     # Ldestationen Locations
     df = pd.read_csv("../data/gold/g_ich_tanke_strom_monthly_locations_CH.csv")
+    # Inverse data publishing
+    df = df.iloc[::-1]
     df.to_html("/var/www/deads/html/plots/v_charging_locations_CH.html", index=False, border=0, justify='left', classes='')
 
     # Ladestationen Stations
     df1 = pd.read_csv("../data/gold/g_ich_tanke_strom_monthly_stations_CH.csv")
+    # Inverse data publishing
+    df1 = df1.iloc[::-1]
     df1.to_html("/var/www/deads/html/plots/v_charging_stations_CH.html", index=False, border=0, justify='left', classes='')
 
 
