@@ -8,13 +8,15 @@ import pandas as pd
 def visualize_energy():
     # Stromproduktion
     df = pd.read_csv("../data/gold/g_stromproduktion.csv")
+    df = df.iloc[::-1]
     df.to_html('/var/www/deads/html/plots/v_stromproduktion.html', index=False, border=0, justify='left', classes='')
 
     # Landesverbrauch (estimated)
     df1 = pd.read_csv("../data/gold/g_landesverbrauch-estimated.csv")
-    html = df1.to_html(border=1)
-    print("HTML Output:", html)
+    df1 = df1.iloc[::-1]
+    df1.to_html('/var/www/deads/html/plots/v_landesverbrauch-estimated.html', index=False, border=0, justify='left', classes='')
 
-    output_html = open("/var/www/deads/html/plots/v_landesverbrauch-estimated.html", "w")
-    output_html.write(html)
-    output_html.close()
+    # Landesverbrauch effektiv
+    df2 = pd.read_csv("../data/gold/g_landesverbrauch-endverbrauch.csv")
+    df2 = df2.iloc[::-1]
+    df2.to_html('/var/www/deads/html/plots/v_landesverbrauch-endverbrauch.html', index=False, border=0, justify='left', classes='')
